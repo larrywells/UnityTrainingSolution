@@ -1,7 +1,0 @@
-{
-  "name": "com.unity.training-solution",
-  "version": "0.1.0",
-  "displayName": "Unity Training Solution",
-  "description": "The Unity Training Solution is built for the purpose of teaching new users how to navigate around the Unity interface and basic Unity Packages.",
-  "unity": "2019.1"
-}
