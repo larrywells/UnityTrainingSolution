@@ -7,10 +7,10 @@ public abstract class Interactables : MonoBehaviour
     [SerializeField] private GameObject interactButton;
     private float interactRange = 5.0f;
     GameObject player;
-    //private bool isInRange = false;
+    protected bool isInRange = false;
 
     // Start is called before the first frame update
-    void Start()
+    public void Awake()
     {
          player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -18,8 +18,9 @@ public abstract class Interactables : MonoBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
+        isInRange = CheckDistanceToPlayer();
         //If the player is within interact range, show the interact button to the user and check for input.
-        if (CheckDistanceToPlayer())
+        if (isInRange)
         {
             interactButton.SetActive(true);
             if (Input.GetButtonDown("Submit"))
@@ -45,5 +46,12 @@ public abstract class Interactables : MonoBehaviour
     }
 
     //Implement a custom interact for children to execute when the interact button is pressed.
-    public abstract void Interact();
+    public virtual void Interact()
+    {
+        Quest quest = PlayerController.GetQuest();
+        if (quest.type == Quest.QuestType.Interaction && quest.target.name == this.gameObject.name)
+        {
+            quest.isComplete = true;
+        }
+    }
 }

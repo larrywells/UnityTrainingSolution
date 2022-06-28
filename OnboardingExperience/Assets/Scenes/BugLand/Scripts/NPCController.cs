@@ -5,8 +5,34 @@ using UnityEngine.UIElements;
 
 public class NPCController : Interactables
 {
+    [SerializeField] private Quest quest;
+    [SerializeField] private GameObject questAvailableIcon;
+    private PlayerController playerC;
+    private bool hasQuest;
+
+     void Start()
+    {
+        
+        if (quest != null && PlayerController.GetQuest() != quest)
+        {
+            hasQuest = true;
+            
+        }
+
+    }
     public override void Interact()
     {
-        Debug.LogWarning("Hello there! Everytime I use the foutain to the left there, everything around me starts to freeze and go crazy, can you please check out the issue?");
+        if (PlayerController.GetQuest() != null)
+        {
+            base.Interact();
+        }
+        
+    }
+
+    public override void Update()
+    {
+        base.Update();
+        //If the NPC has a quest, the player is too far to interact and doesn't already have that quest, show a prompt for the player to come get a quest.
+        questAvailableIcon.SetActive(hasQuest && (isInRange == false) && PlayerController.GetQuest() != quest);
     }
 }

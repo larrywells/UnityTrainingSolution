@@ -7,7 +7,12 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private float mSpeed;
     private float x, z;
+    private static Quest currentQuest;
     Vector3 moveDirection;
+
+    [SerializeField] private GameObject questTitle;
+    [SerializeField] private GameObject questDetails;
+    
 
     void Start()
     {
@@ -31,5 +36,15 @@ public class PlayerController : MonoBehaviour
     {
         SetMoveDirection();
         this.transform.Translate(moveDirection * mSpeed * Time.deltaTime);
+    }
+
+    public static Quest GetQuest()
+    {
+        return currentQuest;
+    }
+
+    public void UpdateQuestPanel()
+    {
+       
     }
 }
