@@ -10,21 +10,23 @@ public abstract class Interactables : MonoBehaviour
     protected bool isInRange = false;
 
     // Start is called before the first frame update
-    public void Awake()
+    public virtual void Start()
     {
-         player = GameObject.FindGameObjectWithTag("Player");
+        player = GameEvents.FindPlayer();
     }
 
     // Update is called once per frame
     public virtual void Update()
     {
         isInRange = CheckDistanceToPlayer();
+        //Debug.Log(Vector3.Distance(this.transform.position, player.transform.position));
         //If the player is within interact range, show the interact button to the user and check for input.
         if (isInRange)
         {
             interactButton.SetActive(true);
             if (Input.GetButtonDown("Submit"))
             {
+                GameEvents.PlayerInteraction(this.gameObject);
                 Interact();
             }
         } else
@@ -48,10 +50,10 @@ public abstract class Interactables : MonoBehaviour
     //Implement a custom interact for children to execute when the interact button is pressed.
     public virtual void Interact()
     {
-        Quest quest = PlayerController.GetQuest();
-        if (quest.type == Quest.QuestType.Interaction && quest.target.name == this.gameObject.name)
-        {
-            quest.isComplete = true;
-        }
+        //Quest quest = PlayerController.GetQuest();
+        //if (quest.type == Quest.QuestType.Interaction && quest.target.name == this.gameObject.name)
+        //{
+        //    quest.isComplete = true;
+        //}
     }
 }

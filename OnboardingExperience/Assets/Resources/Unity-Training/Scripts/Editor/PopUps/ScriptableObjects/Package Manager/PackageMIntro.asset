@@ -14,18 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   module: 0
   validationType: 0
-  templateList: []
-  templateArray: []
-  title: 
-  mainText: 
-  helpImage: {fileID: 0}
+  title: He Who Manages Packages
+  mainText: "The package manager is a vital tool used in most Unity development projects.
+    The package manager allows us to install additional modules and import external
+    code that has been converted into a package format. This allows us to easily
+    install additional functionality to our project. \n\nPlease go to Window > Package
+    Manager to open the package manager window."
+  helpImage: {fileID: 2800000, guid: 2bbbec6634932e2489eef056f3a9cecf, type: 3}
   location:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 0
-    height: 0
-  thisPopUpType: 
+    width: 500
+    height: 650
+  thisPopUpType: GenericPopUp
   nextPopUpDataPath: 
   NextPopUpType: 
   isSkippable: 1

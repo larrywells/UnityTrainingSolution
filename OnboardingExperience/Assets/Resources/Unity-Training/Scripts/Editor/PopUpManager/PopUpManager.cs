@@ -14,6 +14,7 @@ public class PopUpManager : Editor
     private static PopUpTemplate[] Build;
     private static PopUpTemplate[] PackageManager;
     private static PopUpTemplate[] Profiler;
+    private static PopUpTemplate[] Auditor;
 
     private static PopUpTemplate[] currentArray;
     private static PopUpTemplate[][] popUpSections;
@@ -88,8 +89,9 @@ public class PopUpManager : Editor
         Build = data.Build;
         PackageManager = data.PackageManager;
         Profiler = data.Profiler;
+        Auditor = data.Auditor;
 
-        popUpSections = new PopUpTemplate[][] { Hierarchy, Inspector, Scene, Game, Build, PackageManager, Profiler };
+        popUpSections = new PopUpTemplate[][] { Hierarchy, Inspector, Scene, Game, Build, PackageManager, Profiler, Auditor };
     }
 
     public static void NextPopUp()

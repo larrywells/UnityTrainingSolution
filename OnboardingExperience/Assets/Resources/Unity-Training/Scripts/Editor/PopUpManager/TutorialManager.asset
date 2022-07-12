@@ -43,7 +43,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 03684ab7c9ca1a14f9d550794791853a, type: 2}
   - {fileID: 11400000, guid: be51ea220cb97b94f855ff2aaf4211fa, type: 2}
   Build: []
-  PackageManager: []
+  PackageManager:
+  - {fileID: 11400000, guid: 070e9d48e2e20b6478115ac64ab62b47, type: 2}
+  - {fileID: 11400000, guid: ec6b1eb8d288a8441b2f1d7153c3b6fa, type: 2}
+  - {fileID: 11400000, guid: c0267a86c5add784b9f94b01f6480c13, type: 2}
   Profiler:
   - {fileID: 11400000, guid: 41a36331717c9f74a8337d10dcec9ef6, type: 2}
   - {fileID: 11400000, guid: f1f4e0cb9a1f43340be4218318ee1a7c, type: 2}
@@ -58,4 +61,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4b77db7e3ee6b034987c754f277ef918, type: 2}
   - {fileID: 11400000, guid: b230a9a7fa88a8c45ad99628c02d3b0e, type: 2}
   - {fileID: 11400000, guid: 93a0f13f89d022a419c4e2f78f4d44af, type: 2}
-  - {fileID: 0}

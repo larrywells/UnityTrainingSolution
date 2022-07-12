@@ -10,15 +10,6 @@ public class PlayerController : MonoBehaviour
     private static Quest currentQuest;
     Vector3 moveDirection;
 
-    [SerializeField] private GameObject questTitle;
-    [SerializeField] private GameObject questDetails;
-    
-
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -41,6 +32,11 @@ public class PlayerController : MonoBehaviour
     public static Quest GetQuest()
     {
         return currentQuest;
+    }
+
+    public static void SetQuest(Quest _quest)
+    {
+        currentQuest = _quest;
     }
 
     public void UpdateQuestPanel()
